@@ -1,4 +1,4 @@
-Spread Awareness About Women in Technology:
+Objective: Spread awareness about women in technology and highlight dearth of easily-accessible, centralized online information (via Wikipedia) about these important women.
 
 Working List -- to GROW:
 1. Grace Hopper

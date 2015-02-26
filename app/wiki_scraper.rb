@@ -3,22 +3,25 @@ require 'nokogiri'
 require 'open-uri'
 
 class WikiScraper
-attr_accessor :bio, :has_wiki_page, :url
-
-  def has_page?(name)
+attr_accessor :url, :name
+  def initialize(name)
+    @name = name
     @url = "https://en.wikipedia.org/wiki/#{name.gsub(" ", "_")}"
+  end
+
+  def has_page?
     begin
       html = open(self.url)
       data = Nokogiri::HTML(html)
-      self.has_wiki_page = true
+      true
     rescue OpenURI::HTTPError => e
       if e.message == '404 Not Found'
-        self.has_wiki_page = false
+        false
       end
     end
   end
   
-  def scrape_bio(name)
+  def scrape_bio
     html = open(self.url)
     data = Nokogiri::HTML(html)
     data.css("div#mw-content-text p:nth-child(2)").text

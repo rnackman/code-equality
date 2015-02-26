@@ -18,3 +18,5 @@ class TweetGrabber
     end
   end   
 end
+
+# This should go into our ERB file so that we're scraping in real time.

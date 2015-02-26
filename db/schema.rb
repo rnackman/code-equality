@@ -11,26 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 1) do
 
   create_table "individuals", force: :cascade do |t|
-    t.string "name"
-    t.string "bio"
+    t.string  "name"
+    t.boolean "has_wiki_page"
+    t.string  "wiki_page_link"
+    t.integer "wiki_page_word_count"
+    t.string  "bio"
+    t.string  "wiki_create_link"
   end
-
-  create_table "quotes", force: :cascade do |t|
-    t.string  "body"
-    t.string  "source"
-    t.integer "individual_id"
-  end
-
-  add_index "quotes", ["individual_id"], name: "index_quotes_on_individual_id"
-
-  create_table "tweets", force: :cascade do |t|
-    t.string  "body"
-    t.integer "individual_id"
-  end
-
-  add_index "tweets", ["individual_id"], name: "index_tweets_on_individual_id"
 
 end

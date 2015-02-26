@@ -3,6 +3,9 @@ require 'pry'
 # Create an array of individuals.
 amazing_women = ["Grace Hopper", "Sandi Metz", "Ada Lovelace"] # To grow eventually. I know Sandi Metz doesn't have a page.
 
+Individual.destroy_all
+
+
 amazing_women.each do |woman|
   w = Individual.create(name: woman)
   wiki = WikiScraper.new(w.name)
@@ -13,7 +16,7 @@ amazing_women.each do |woman|
   else
     w.wiki_create_link = "https://en.wikipedia.org/w/index.php?title=#{w.name.gsub(" ", "_")}&action=edit"
   end
-  binding.pry
+  w.save
 end
 
 #TODO: Figure out what happens if you don't have a Wikipedia editor login. 

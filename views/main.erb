@@ -1,8 +1,7 @@
-<h1><%= @woman.name %></h1>
+<h1><%= @header %></h1>
 
-<ul>
-<li><%= @woman.wiki_page_link %></li>
-<li><%= @woman.bio %></li>
-<li><%= @stat %></li>
-</ul>
+<p><%= @directive %></p>
+<p><%= @woman.bio %></p>
+<p><a href="http://stats.grok.se/en/latest90/<%= @woman.name.gsub(" ", "_") %>"><%= @stat %></a></p>
 
+<p><%= @twitter_intro %></p>

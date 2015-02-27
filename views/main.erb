@@ -6,3 +6,11 @@
 <li><%= @stat %></li>
 </ul>
 
+<h2>WHAT ARE THE PEOPLE SAYING!?</h2>
+
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li><%= tweet.text %> <p>@<%= tweet.user.screen_name %></p> </li>
+  <% end %>
+</ul>
+

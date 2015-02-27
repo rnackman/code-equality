@@ -1,4 +1,6 @@
-require 'sinatra'
-require './runtime'
+# config.ru
+require './config/environment'
 
-run RunTime
+run GraceHopperTime
+
+$stdout.sync = true

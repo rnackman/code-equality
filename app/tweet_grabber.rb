@@ -12,18 +12,10 @@ class TweetGrabber
     @all = []
   end
 
-  def populate(type = "mixed", woman)
-    CLIENT.search(woman, result_type: type, lang: "en").take(10).each do |tweet| 
+  def populate(woman)
+    @client.search(woman, result_type: type = "mixed", lang: "en").take(10).each do |tweet|
       self.all << tweet.text.split('http').first.strip
     end
-  end   
+  end
+
 end
-
-# This should go into our ERB file so that we're scraping in real time.
-
-# <!-- For Tweets about this individual
-#   tweets = []
-#   tweets = TweetGrabber.new.populate(w.name)
-#   tweets.each do |t|
-#     Tweet.create(body: t.text, individual_id: w.id)
-#   end -->

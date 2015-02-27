@@ -9,3 +9,5 @@ ActiveRecord::Base.establish_connection(
  :adapter => "sqlite3",
  :database => "db/hopper_time.sqlite3"
 )
+
+require_relative '../app'

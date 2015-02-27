@@ -7,23 +7,17 @@ class TweetGrabber
     config.consumer_secret     = "my5zRI30lGUm7MIGHglHzYqqUnKdc89U1RqFq38eyYhIK7C603"
   end
 
-  def initialize
+  def initialize(woman)
     @client = CLIENT
     @all = []
+    populate(woman)
   end
 
-  def populate(type = "mixed", woman)
-    CLIENT.search(woman, result_type: type, lang: "en").take(10).each do |tweet| 
-      self.all << tweet.text.split('http').first.strip
+  def populate(woman)
+    @client.search(woman, result_type: type = "mixed", lang: "en").take(5).each do |tweet|
+      # self.all << tweet.text.split('http').first.strip
+      self.all << @client.oembed(tweet.id).html
     end
-  end   
+  end
+
 end
-
-# This should go into our ERB file so that we're scraping in real time.
-
-# <!-- For Tweets about this individual
-#   tweets = []
-#   tweets = TweetGrabber.new.populate(w.name)
-#   tweets.each do |t|
-#     Tweet.create(body: t.text, individual_id: w.id)
-#   end -->

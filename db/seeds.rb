@@ -1,10 +1,8 @@
 require './config/environment.rb'
-require 'pry'
-# Create an array of individuals.
-amazing_women = ["Grace Hopper", "Sandi Metz", "Ada Lovelace"] # To grow eventually. I know Sandi Metz doesn't have a page.
+
+amazing_women = ["Grace Hopper", "Sandi Metz", "Ada Lovelace"]
 
 Individual.destroy_all
-
 
 amazing_women.each do |woman|
   w = Individual.create(name: woman)
@@ -18,10 +16,3 @@ amazing_women.each do |woman|
   end
   w.save
 end
-
-#TODO: Figure out what happens if you don't have a Wikipedia editor login. 
-#Should we account for that edge case or instruct users to create a Wiki login before using?
-
-###NOTA BENE###
-# This is working if I pry into it, but for some reason I can't get it to seed the database properly.
-# We should talk with Ian about this if one of you can't figure it out!

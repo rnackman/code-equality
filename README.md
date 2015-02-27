@@ -1,33 +1,14 @@
-Objective: Spread awareness about women in technology and highlight dearth of easily-accessible, centralized online information (via Wikipedia) about these important women.
+A simple web app to highlight the dearth of information on Wikipedia about important women in technology.
 
-Working List -- to GROW:
-1. Grace Hopper
-2. Sandi Metz
-3. Anita Borg
-4. Ada Lovelace
-5. Katherine Johnson
+Users are presented with an individual's name and recent tweets mentioning her name. Depending on the individual's presence on Wikipedia, users are prompted to create a new page or to update an existing page. The site suggests a different individual to create/edit upon each refresh.
 
-Project Spec:
+Database seeded using data from a public spreadsheet maintained by the Anita Borg Institute and the Committee on the Status of Women in Computing Research (https://docs.google.com/spreadsheet/ccc?key=0AgtB-ve2c_3ydDFiVkt3U3FTUXJBb0VydmRHc3FVS3c&usp=drivesdk), Wikipedia, and http://stats.grok.se/.
 
-1. Create a list of women in technology to include in the project.
-2. Populate a database with the following information about each woman in technology:
-  - :individuals table: name, brief intro (scraped from Wikipedia, Wikiquotes, other sources?)
-  [TODO: Add birthdate to schema.]
-  - :quotes table: quote text, source, individual_id
-  - :articles table: article_url, individual_id ## TODO: figure out a news source API
-  [TODO: Delete tweets from db schema.]
+Inspired by Art+Feminism (art.plusfeminism.org) and the CRA-W and Anita Borg Institute Wikipedia Project (http://www.cs.duke.edu/csed/wikipedia/index.html).
 
-TODO: Create ERB templates and generate pages for each woman.
+Updates in progress:
+- Changes to CSS templates and other minor fixes.
+- Adding a feature to allow users to update the database if they create a new page for an individual.
+- Adding a feature to present a full index of the site and to allow searching by individual.
 
-3. Display in live website:
-  - Index of all women included in the project.
-  - Page for each woman:
-    - Wikipedia bio/summary IF AVAILABLE
-    - IF NOT AVAILABLE:
-       - Guilt: Display number of days since woman's birthdate that she hasn't had a Wikipedia page.
-       TODO: Figure out how to trigger this if the Wikipedia scrape comes up blank; 404 Error seems to be thrown. Write a rescue that does the guilt trip.
-       - Suggest that someone start the Wikipedia page; provide link to stub page creator on Wiki.
-       - Embed a pre-composed Tweet for the lazy, notifying followers of this missing Wiki presence and suggesting they fix.
-    - Recent tweets about this woman (using TweetGrabber class). Refresh upon page refresh.
-
-Easter egg possibility: backwards ticking clock on Grace Hopper page?
+Created by Alex Goldvarg (@agoldvarg), Andrew Miksch (@superandrew123) & Rachel Nackman (@rnackman) as a project for Flatiron School's web development immersive (Ruby 007). Thanks to Ian Miller for all your help!

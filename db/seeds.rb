@@ -1,6 +1,6 @@
 require './config/environment.rb'
 
-amazing_women = ["Grace Hopper", "Sandi Metz", "Ada Lovelace"]
+amazing_women = Scraper.new.all
 
 Individual.destroy_all
 

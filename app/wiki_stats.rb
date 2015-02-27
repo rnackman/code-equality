@@ -9,6 +9,6 @@ attr_accessor :url, :name
   def scrape_stats
     html = open(self.url)
     data = Nokogiri::HTML(html)
-    data.css("p:nth-child(3)").text
+    stat = "Her page" + data.css("p:nth-child(3)").text.slice!(@name.length..-1)
   end
 end

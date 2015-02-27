@@ -8,3 +8,7 @@ end
 task :seed do
   load './db/seeds.rb'
 end
+
+task :seed_test do
+  load './db/seeds_test.rb'
+end

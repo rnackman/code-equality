@@ -1,6 +1,6 @@
 require './config/environment.rb'
 
-amazing_women = CSVScraper.new.all
+amazing_women = ["Grace Hopper", "Ada Lovelace", "Sandi Metz", "Leslie DeWan"]
 
 Individual.destroy_all
 

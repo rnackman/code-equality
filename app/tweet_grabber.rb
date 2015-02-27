@@ -7,14 +7,16 @@ class TweetGrabber
     config.consumer_secret     = "my5zRI30lGUm7MIGHglHzYqqUnKdc89U1RqFq38eyYhIK7C603"
   end
 
-  def initialize
+  def initialize(woman)
     @client = CLIENT
     @all = []
+    populate(woman)
   end
 
   def populate(woman)
-    @client.search(woman, result_type: type = "mixed", lang: "en").take(10).each do |tweet|
-      self.all << tweet.text.split('http').first.strip
+    @client.search(woman, result_type: type = "mixed", lang: "en").take(5).each do |tweet|
+      # self.all << tweet.text.split('http').first.strip
+      self.all << @client.oembed(tweet.id).html
     end
   end
 

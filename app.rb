@@ -4,8 +4,7 @@ class GraceHopperTime < Sinatra::Base
 
   get '/' do
     @woman = Individual.all.sample
-    @tweets = TweetGrabber.new.populate(@woman.name)
-
+    @tweets = TweetGrabber.new(@woman.name).all
     if @woman.has_wiki_page
       @stat = WikiStats.new(@woman.name).scrape_stats.strip.gsub("_", " ")
       @header = @woman.name.upcase+" HAS A WIKIPEDIA PAGE"

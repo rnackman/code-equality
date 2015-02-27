@@ -2,9 +2,10 @@
 #main {
 	padding: 0em 2em 2em 2em;
 	height: 100%;
+	font-size: 1em;
 }
 p {
-	font-size: 1.5em;
+
 }
 #header {
 	display: block;
@@ -15,8 +16,7 @@ p {
 
 #leftBar {
 	padding: 1em;
-	background-color: #f6f6f6;
-	height: 150em; 
+	background-color: #f6f6f6; 
 }
 
 #rightBar {
@@ -30,8 +30,4 @@ p {
 	height: 150em;
 }
 
-li {
-	margin-top: 0.2em;
-	font-size: 1.2em;
-}
 .title

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>=CodeEquality=</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+  	<div id="main">
+	  	<div class="row"><div id="header" class="col-md-10" style="font-size: 52px; font-family: Helvetica">=CodeEquality=</div></div>
+	  	<div class="row">
+		  </div>
+		  <div id="content" class="col-md-6">
+		  <h1><p class="title"><%= @header %></p></h1>
+
+      <h2><%= @directive %></h2>
+
+
+      <h3><%= @woman.bio %></h3>
+      <h3><a href="http://stats.grok.se/en/latest90/<%= @woman.name.gsub(" ", "_") %>" target="_blank"><%= @stat %></a></h3>
+
+      <h3><%= @twitter_intro %></h3>
+          <% @tweets.each do |tweet| %>
+            <%= tweet %>
+          <% end %>
+		  </div>
+	  	</div>
+  	</div>
+    <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+  </body>
+</html>

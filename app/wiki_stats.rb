@@ -6,7 +6,7 @@ attr_accessor :url, :name
     @url = "http://stats.grok.se/en/latest90/#{name.gsub(" ", "_")}"
   end
 
-  def scrape_stats(name) 
+  def scrape_stats
     html = open(self.url)
     data = Nokogiri::HTML(html)
     data.css("p:nth-child(3)").text
@@ -17,3 +17,5 @@ end
 # Calling the above will give us "Grace Hopper was viewed ##### times in the last 90 days."
 # Pulling from a stats site about Wikipedia.
 # This should go into our ERB file so that it's pulling in real time.
+
+# <h2><%= WikiStats.new.scrape_stats(@woman.name).strip.delete("\n").gsub("_", " ")%><h2>

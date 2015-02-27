@@ -1,11 +1,8 @@
 <h1><%= @woman.name %></h1>
 
-<!-- For Tweets about this individual
-  tweets = []
-  tweets = TweetGrabber.new.populate(w.name)
-  tweets.each do |t|
-    Tweet.create(body: t.text, individual_id: w.id)
-  end -->
+<ul>
+<li><%= @woman.wiki_page_link %></li>
+<li><%= @woman.bio %></li>
+<li><%= @stat %></li>
+</ul>
 
-<!-- For WikiStats about this individual
-WikiStats.new.scrape_stats(w.name).strip.delete("\n").gsub("_", " ")

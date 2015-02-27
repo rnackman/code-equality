@@ -12,10 +12,3 @@ attr_accessor :url, :name
     data.css("p:nth-child(3)").text
   end
 end
-
-# WikiStats.new(<woman's name>).scrape_stats.strip.delete("\n").gsub("_", " ")
-# Calling the above will give us "Grace Hopper was viewed ##### times in the last 90 days."
-# Pulling from a stats site about Wikipedia.
-# This should go into our ERB file so that it's pulling in real time.
-
-# <h2><%= WikiStats.new.scrape_stats(@woman.name).strip.delete("\n").gsub("_", " ")%><h2>

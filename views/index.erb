@@ -1,0 +1,35 @@
+<!-- LIST ALL THE PROGRAMMERS -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>=CodeEquality=</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+  	<div id="main">
+	  	<div class="row">
+        <div id="header" class="col-md-10">-=CodeEquality=-</div>
+      </div>
+      <div id="leftBar" class="col-md-2">
+          <a href="/">SHOW ME ANOTHER</a><br>
+          <a href="">About this project</a><br>
+          <a href="http://anitaborg.org/">Anita-Borg Institue</a><br>
+          <a href="/index">Index</a><br>
+          <a href="http://en.wikipedia.org">Wikipedia</a><br>
+      </div>
+		  <div id="content" class="col-md-6">
+        <div class="row">
+  		    <p class="title">Index of Programmers</p>
+
+  		    <% @all.each do |programmer| %>
+  		    	<a href="/show/<%= programmer.id%>"><%= programmer.name%></a>
+  		    <% end %>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

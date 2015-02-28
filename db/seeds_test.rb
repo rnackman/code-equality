@@ -1,8 +1,10 @@
-require './config/environment.rb'
+ require './config/environment.rb'
 
 amazing_women = ["Grace Hopper", "Ada Lovelace", "Sandi Metz", "Leslie DeWan"]
 
+
 Individual.destroy_all
+Tweet.destroy_all
 
 amazing_women.each do |woman|
   woman.gsub!(/ë/, 'e')
@@ -10,6 +12,12 @@ amazing_women.each do |woman|
   woman.gsub!(/ğ/, 'g')
   woman.gsub!(/Ö/, 'O')
   w = Individual.create(name: woman)
+  tweets = TweetGrabber.new(w.name).all
+  tweets.each do |tweet|
+    t = Tweet.create(html: tweet)
+    t.individual = w
+    t.save
+  end
   wiki = WikiScraper.new(w.name)
   w.has_wiki_page = wiki.has_page?
   if w.has_wiki_page == true

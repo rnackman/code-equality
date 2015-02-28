@@ -12,7 +12,7 @@
         <div id="header" class="col-md-10">=CodeEquality=</div>
       </div>
       <div id="leftBar" class="col-md-2">
-        
+
       </div>
 		  <div id="content" class="col-md-6">
 		    <p class="title"><%= @header %></p>
@@ -22,8 +22,8 @@
         <p id="bio"><%= @woman.bio %></p>
 
         <%= @twitter_intro %>
-            <% @tweets.each do |tweet| %>
-              <%= tweet %>
+            <% @woman.tweets.each do |tweet| %>
+              <%= tweet.html %>
             <% end %>
 		  </div>
 

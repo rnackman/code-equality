@@ -8,22 +8,24 @@
 
   <body>
     <div id="main">
-      <div class="row">
-        <div id="header" class="col-md-10">=CodeEquality=</div>
-      </div>
       <div id="leftBar" class="col-md-2">
-          <a href="/">SHOW ME ANOTHER</a><br>
-          <a href="">About this project</a><br>
-          <a href="http://anitaborg.org/">Anita-Borg Institute</a><br>
+          <div id="logo"><a href="/">=CodeEquality=</a></div>
+          <br>
+          <a href="">About</a><br>
           <a href="/index">Index</a><br>
+          <a href="http://anitaborg.org/">Anita Borg Institute</a><br>
           <a href="http://en.wikipedia.org">Wikipedia</a><br>
       </div>
-      <div id="content" class="col-md-6">
+      <div id="content" class="col-md-9">
         <div class="row">
-          <p class="title">Index of Programmers</p>
-          <% @all.each.with_index(1) do |programmer, i| %>
-            <a href="/<%=programmer.downcasename%>"><%= "#{i}. #{programmer.name.upcase}" %></a><br>
+          <div class="row"><br><br></div>
+          <p id="index-title">INDEX</p>
+          <div class="row"><br></div>
+          <div id="index">
+          <% @all.each do |programmer, i| %>
+            <a href="/<%=programmer.downcasename%>"><%= "#{programmer.name.upcase}" %></a><br>
           <% end %>
+          </div>
         </div>
       </div>
     </div>

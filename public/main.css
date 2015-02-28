@@ -1,5 +1,12 @@
 body {
 	background-color: white;
+	font-family: Helvetica, sans-serif;
+}
+
+a:hover {
+	border-bottom: solid 4px #39FF14;
+	text-decoration: none;
+	color: #428bca;
 }
 
 #main {
@@ -10,6 +17,7 @@ body {
 p ~ a {
 	font-size: 1.5em;
 }
+
 #header {
 	margin: 0 0 1em 0;
 	display: block;
@@ -19,10 +27,17 @@ p ~ a {
 	background-color: white;
 }
 
+#main #header a:hover {
+	border: none;
+	text-decoration: none;
+}
+
 #leftBar {
 	padding: 2.5em 1em 1em 1.5em;
-	background-color: #f6f6f6; 
-	height: 150em;
+	height: 260em;
+	text-transform: uppercase;
+	line-height: 2em;
+	border-right: 5px solid #39FF14;
 }
 
 #rightBar {
@@ -35,24 +50,51 @@ p ~ a {
 	padding: 0 2em 2em 2em;
 	height: 150em;
 	background-color: white;
+	margin-left: 5em;
 }
-.title {
+
+.title, #directive a {
+	font-size: 3.5em;
+}
+
+#index-title {
 	font-size: 2em;
-	font-style: bold;
 }
 
-#directive a {
+#index {
+	line-height: 2em;
 	font-size: 1.5em;
+  column-count: 4;
+  -moz-column-count: 4;
+  -webkit-column-count: 4;
 
+  column-gap: 20px;
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
 }
 
+#logo {
+	text-transform: none;
+	font-size: 2em;
+	font-weight: bold;
+}
 
+#logo a{
+	color: #000000;
+}
 
+#logo a:hover {
+	border: none;
+}
 
+#stat, #bio, #twitter-intro {
+	font-size: 1.5em;
+}
 
-
-
-
+#twitter-material {
+	width: 60%;
+	position: relative;
+}
 
 
 

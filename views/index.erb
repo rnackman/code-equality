@@ -1,6 +1,4 @@
-<!-- LIST ALL THE PROGRAMMERS -->
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
   <head>
     <title>=CodeEquality=</title>
@@ -9,8 +7,8 @@
   </head>
 
   <body>
-  	<div id="main">
-	  	<div class="row">
+    <div id="main">
+      <div class="row">
         <div id="header" class="col-md-10">=CodeEquality=</div>
       </div>
       <div id="leftBar" class="col-md-2">
@@ -20,14 +18,12 @@
           <a href="/index">Index</a><br>
           <a href="http://en.wikipedia.org">Wikipedia</a><br>
       </div>
-		  <div id="content" class="col-md-6">
+      <div id="content" class="col-md-6">
         <div class="row">
-  		    <p class="title">Index of Programmers</p>
-  		    <% x = 1 %>
-  		    <% @all.each do |programmer| %>
-  		    	<a href=""><%=x%>.  <%= programmer %></a><br>
-  		    	<% x += 1%>
-	    	<% end %>
+          <p class="title">Index of Programmers</p>
+          <% @all.each.with_index(1) do |programmer, i| %>
+            <a href="/"><%= "#{i}. #{programmer.name}" %></a><br>
+        <% end %>
         </div>
       </div>
     </div>

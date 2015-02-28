@@ -23,11 +23,11 @@
 		  <div id="content" class="col-md-6">
         <div class="row">
   		    <p class="title">Index of Programmers</p>
-
+  		    <% x = 1 %>
   		    <% @all.each do |programmer| %>
-  		    	<a href="/show/<%= programmer.id%>"><%= programmer.name%></a>
-  		    <% end %>
-
+  		    	<a href=""><%=x%>.  <%= programmer %></a><br>
+  		    	<% x += 1%>
+	    	<% end %>
         </div>
       </div>
     </div>

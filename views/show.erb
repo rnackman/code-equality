@@ -1,3 +1,6 @@
+<!-- Individual programmer page -->
+<!-- should reference to get "/:id" -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,7 +17,7 @@
       <div id="leftBar" class="col-md-2">
           <a href="/">SHOW ME ANOTHER</a><br>
           <a href="">About this project</a><br>
-          <a href="http://anitaborg.org/">Anita-Borg Institute</a><br>
+          <a href="http://anitaborg.org/">Anita-Borg Institue</a><br>
           <a href="/index">Index</a><br>
           <a href="http://en.wikipedia.org">Wikipedia</a><br>
       </div>
@@ -27,8 +30,8 @@
           <p id="bio"><%= @woman.bio %></p>
 
           <%= @twitter_intro %>
-              <% @woman.tweets.each do |tweet| %>
-                <%= tweet.html %>
+              <% @tweets.each do |tweet| %>
+                <%= tweet %>
               <% end %>
 
 

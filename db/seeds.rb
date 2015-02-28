@@ -3,20 +3,19 @@ require './config/environment.rb'
 amazing_women = CSVScraper.new.all
 
 Individual.destroy_all
+Tweet.destroy_all
 
 amazing_women.each do |woman|
   woman.gsub!(/ë/, 'e')
   woman.gsub!(/ö/, 'o')
   woman.gsub!(/ğ/, 'g')
   woman.gsub!(/Ö/, 'O')
-  w = Individual.create(name: woman)
+  w = Individual.create(name: woman.downcase)
   tweets = TweetGrabber.new(w.name).all
   tweets.each do |tweet|
-    Tweet.create(html: tweet)
-  end
-  Tweet.all.each do |tweet|
-    tweet.individual = w
-    tweet.save
+    t = Tweet.create(html: tweet)
+    t.individual = w
+    t.save
   end
   wiki = WikiScraper.new(w.name)
   w.has_wiki_page = wiki.has_page?

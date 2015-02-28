@@ -13,6 +13,10 @@ class GraceHopperTime < Sinatra::Base
     erb :index
   end
 
+  get '/about' do
+    erb :about
+  end
+
   get '/:name' do
     name = params[:name].gsub(/_/, ' ')
     @woman = Individual.find_by(downcasename: name)

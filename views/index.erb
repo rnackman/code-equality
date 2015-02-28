@@ -22,7 +22,7 @@
         <div class="row">
           <p class="title">Index of Programmers</p>
           <% @all.each.with_index(1) do |programmer, i| %>
-            <a href="/<%=programmer.name%>"><%= "#{i}. #{programmer.name.upcase}" %></a><br>
+            <a href="/<%=programmer.downcasename%>"><%= "#{i}. #{programmer.name.upcase}" %></a><br>
           <% end %>
         </div>
       </div>

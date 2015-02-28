@@ -20,7 +20,7 @@ attr_accessor :url, :name
       end
     end
   end
-  
+
   def scrape_bio
     html = open(self.url)
     data = Nokogiri::HTML(html)

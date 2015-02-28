@@ -15,7 +15,7 @@ class GraceHopperTime < Sinatra::Base
 
   get '/:name' do
     name = params[:name].gsub(/_/, ' ')
-    @woman = Individual.find_by(name: name)
+    @woman = Individual.find_by(downcasename: name)
     build_display_material(@woman)
     erb :main
   end

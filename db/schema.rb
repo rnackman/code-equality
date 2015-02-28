@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 4) do
 
   create_table "individuals", force: :cascade do |t|
     t.string  "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string  "wiki_page_link"
     t.string  "bio"
     t.string  "wiki_create_link"
+    t.string  "downcasename"
   end
 
   create_table "tweets", force: :cascade do |t|

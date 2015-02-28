@@ -9,47 +9,49 @@
   <body>
   	<div id="main">
 	  	<div class="row">
-        <div id="header" class="col-md-10">=CodeEquality=</div>
+        <div id="header" class="col-md-10">-=CodeEquality=-</div>
       </div>
       <div id="leftBar" class="col-md-2">
-        
+          <a href="/">SHOW ME ANOTHER</a><br>
+          <a href="">About this project</a><br>
+          <a href="http://anitaborg.org/">Anita-Borg Institue</a><br>
+          <a href="/index">Index</a><br>
+          <a href="http://en.wikipedia.org">Wikipedia</a><br>
       </div>
 		  <div id="content" class="col-md-6">
-		    <p class="title"><%= @header %></p>
-        <a href="http://stats.grok.se/en/latest90/<%= @woman.name.gsub(" ", "_") %>" target="_blank"><%= @stat %></a>
-        <p id="directive"><%= @directive %></p>
+        <div class="row">
+  		    <p class="title"><%= @header %></p>
 
-        <p id="bio"><%= @woman.bio %></p>
+          <a href="http://stats.grok.se/en/latest90/<%= @woman.name.gsub(" ", "_") %>" target="_blank"><%= @stat %></a>
+          <p id="directive"><%= @directive %></p>
+          <p id="bio"><%= @woman.bio %></p>
 
-        <%= @twitter_intro %>
-            <% @tweets.each do |tweet| %>
-              <%= tweet %>
-            <% end %>
-		  </div>
+          <%= @twitter_intro %>
+              <% @tweets.each do |tweet| %>
+                <%= tweet %>
+              <% end %>
 
-	  </div>
 
-    <script>
-    window.twttr = (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
-      t = window.twttr || {};
-    if (d.getElementById(id)) return;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
+          <script>
+          window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
 
-    t._e = [];
-    t.ready = function(f) {
-      t._e.push(f);
-    };
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
 
-    return t;
-    }(document, "script", "twitter-wjs"));
-    </script>
-
+          return t;
+          }(document, "script", "twitter-wjs"));
+          </script>
+        </div>
+      </div>
+    </div>
   </body>
-  <footer class="footer">
-    <a href="/">SHOW ME ANOTHER</a>
-  </footer>
 </html>

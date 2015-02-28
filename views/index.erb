@@ -22,8 +22,8 @@
         <div class="row">
           <p class="title">Index of Programmers</p>
           <% @all.each.with_index(1) do |programmer, i| %>
-            <a href="/"><%= "#{i}. #{programmer.name}" %></a><br>
-        <% end %>
+            <a href="/<%=programmer.name%>"><%= "#{i}. #{programmer.name.upcase}" %></a><br>
+          <% end %>
         </div>
       </div>
     </div>

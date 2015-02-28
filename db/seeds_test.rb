@@ -11,7 +11,7 @@ amazing_women.each do |woman|
   woman.gsub!(/ö/, 'o')
   woman.gsub!(/ğ/, 'g')
   woman.gsub!(/Ö/, 'O')
-  w = Individual.create(name: woman)
+  w = Individual.create(name: woman.downcase)
   tweets = TweetGrabber.new(w.name).all
   tweets.each do |tweet|
     t = Tweet.create(html: tweet)

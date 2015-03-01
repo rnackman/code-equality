@@ -1,6 +1,8 @@
 require './config/environment.rb'
 
 class GraceHopperTime < Sinatra::Base
+  
+
 
   get '/' do
     @woman = Individual.all.sample
@@ -17,12 +19,33 @@ class GraceHopperTime < Sinatra::Base
     erb :about
   end
 
+  post '/add_person' do
+    @full_name = params[:first_name] + " " + params[:last_name]
+    Seed.new(@full_name) if !Individual.find_by(name: @full_name)
+    @slug = @full_name.gsub(" ", "_").downcase
+    redirect "/#{@slug}"
+  end
+
+  get '/add_person' do
+    erb :add_person
+  end
+
   get '/:name' do
     name = params[:name].gsub(/_/, ' ')
     @woman = Individual.find_by(downcasename: name)
-    build_display_material(@woman)
-    erb :main
+    if @woman
+      build_display_material(@woman)
+      erb :main
+    else
+      erb :oops
+    end
   end
+
+  not_found do
+    status 404
+    erb :oops
+  end
+
 
   def build_display_material(woman)
     if woman.has_wiki_page

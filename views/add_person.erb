@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>=CodeEquality=</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="new_main.css">
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="header"><a href="/">=CodeEquality=</a></div>
+      <div id="leftBar" class="col-md-2">
+          <a href="/about">About</a><br>
+          <a href="/index">Index</a><br>
+          <a href="http://anitaborg.org/">Anita Borg Institute</a><br>
+          <a href="http://en.wikipedia.org">Wikipedia</a><br>
+      </div>
+      <div id="content" class="col-md-7">
+        <div class="row">
+          <p id="index-title">ADD PERSON</p><br>
+          <form action="/add_person" method="post">
+            <label>First Name</label>
+            <input type="text" name="first_name"></input><br><br>
+            <label>Last Name</label>
+            <input type="text" name="last_name"></input><br><br>
+            <input type="submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

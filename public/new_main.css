@@ -8,20 +8,32 @@ div {
 
 #header {
 	margin: 0.5em 0 0 0;
-	height: 2.5em;
-	padding: 0 0 0 0.5em;
+	height: 1.5em;
+	padding: 0 0 0 0.22em;
 	font-size: 3em;
+	vertical-align: center;
 }
+#header a {
+	color: black;
+
+}
+#header a:link, a:hover, a:visited, a:active {
+	color: black;
+	font-weight: normal;
+	border-bottom: none;
+	text-decoration: none;
+}
+
 #leftBar {
 	height: 60em;
 	position: relative;
+	border-right: 0.2em solid;	
 }
 #main {
 	padding: 0em 2em 2em 2em;
-
 }
 #content {
-
+	padding: 0 0 0 3em;
 }
 
 #index {
@@ -34,12 +46,18 @@ div {
 	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
 }
-#index-title {
+.title {
+	font-size: 1.5em;	
+}
+
+#leftBar a, a {
+	color: #0E78FF;
+	font-weight: 900;
 
 }
 
 a:hover {
-	border-bottom: solid 4px #39FF14;
+	border-bottom: solid 4px #0E78FF;
 	font-weight: 900;
-	color: #428bca;
+	color: #0E78FF;
 }

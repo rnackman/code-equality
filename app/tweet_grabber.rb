@@ -7,14 +7,14 @@ class TweetGrabber
     config.consumer_secret     = "my5zRI30lGUm7MIGHglHzYqqUnKdc89U1RqFq38eyYhIK7C603"
   end
 
-  def initialize(woman)
+  def initialize(programmer)
     @client = CLIENT
     @all = []
-    populate(woman)
+    populate(programmer)
   end
 
-  def populate(woman)
-    @client.search(woman, result_type: type = "mixed", lang: "en").take(10).each do |tweet|
+  def populate(programmer)
+    @client.search(programmer, result_type: type = "mixed", lang: "en").take(10).each do |tweet|
       unless self.all.include?(@client.oembed(tweet.id).html)
         self.all << @client.oembed(tweet.id).html
       end

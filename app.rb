@@ -29,10 +29,16 @@ class GraceHopperTime < Sinatra::Base
       @stat = WikiStats.new(woman.name).scrape_stats.strip.gsub("_", " ")
       @header = woman.name.upcase + " HAS A WIKIPEDIA PAGE"
       @directive = "<a href='#{woman.wiki_page_link}' target='_blank'>CAN YOU HELP MAKE IT BETTER?</a>"
+      @tweet_embed = "Can you help improve #{woman.name}'s Wikipedia page?"
     else
       @header = woman.name.upcase + " DOES NOT HAVE A WIKIPEDIA PAGE"
       @directive = "<a href='#{woman.wiki_create_link}' target='_blank'>WHY DON'T YOU MAKE HER ONE?</a>"
+      @tweet_embed = "Can you help build #{woman.name}'s Wikipedia page?"
     end
-    @twitter_intro = "Here's what people have been saying about her on Twitter:"
+    if woman.tweets.size == 0
+      @twitter_intro = "Start the conversation on Twitter: "
+    else
+      @twitter_intro = "Here's what people have been saying about her on Twitter. Join the conversation: "
+    end
   end
 end

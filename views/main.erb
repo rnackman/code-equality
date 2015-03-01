@@ -15,7 +15,7 @@
           <a href="http://anitaborg.org/">Anita Borg Institute</a><br>
           <a href="http://en.wikipedia.org">Wikipedia</a><br>
       </div>
-		  <div id="content" class="col-md-6">
+		  <div id="content" class="col-md-8">
         <div class="row">
   		    <p class="title"><%= @header %></p>
           <p id="directive"><%= @directive %></p>
@@ -23,7 +23,8 @@
           <p id="bio"><%= @woman.bio %></p>
         <div id="row"><br></div>
         <div id="twitter-material">
-          <div id="twitter-intro"><%= @twitter_intro %></div>
+          <div id="twitter-intro"><%= @twitter_intro %><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:9393/<%=@woman.name.gsub(" ", "_") %>" data-text="<%=@tweet_embed %> " data-hashtags="codeequality">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
               <% @woman.tweets.each do |tweet| %>
                 <%= tweet.html %>
               <% end %>

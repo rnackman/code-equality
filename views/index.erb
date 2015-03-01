@@ -3,27 +3,24 @@
   <head>
     <title>=CodeEquality=</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="new_main.css">
   </head>
 
   <body>
     <div id="main">
+      <div id="header"><a href="/">=CodeEquality=</a></div>
       <div id="leftBar" class="col-md-2">
-          <div id="logo"><a href="/">=CodeEquality=</a></div>
-          <br>
           <a href="/about">About</a><br>
           <a href="/index">Index</a><br>
           <a href="http://anitaborg.org/">Anita Borg Institute</a><br>
           <a href="http://en.wikipedia.org">Wikipedia</a><br>
       </div>
-      <div id="content" class="col-md-9">
+      <div id="content" class="col-md-8">
         <div class="row">
-          <div class="row"><br><br></div>
-          <p id="index-title">INDEX</p>
-          <div class="row"><br></div>
+          <p id="index-title">All Programmers Currently Being Tracked:</p>
           <div id="index">
           <% @all.each do |programmer, i| %>
-            <a href="/<%=programmer.downcasename%>"><%= "#{programmer.name.upcase}" %></a><br>
+            <a href="/<%=programmer.downcasename.gsub(" ", "_")%>"><%= "#{programmer.name}" %></a><br>  
           <% end %>
           </div>
         </div>

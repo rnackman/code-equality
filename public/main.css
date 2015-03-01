@@ -35,9 +35,10 @@ p ~ a {
 #leftBar {
 	padding: 2.5em 1em 1em 1.5em;
 	height: 260em;
-	text-transform: uppercase;
 	line-height: 2em;
 	border-right: 5px solid #39FF14;
+	position: fixed;
+	width: 10em;
 }
 
 #rightBar {

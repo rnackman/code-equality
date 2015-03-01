@@ -2,8 +2,8 @@ require './config/environment.rb'
 
 amazing_women = CSVScraper.new.all
 
-Individual.destroy_all
-Tweet.destroy_all
+# Individual.destroy_all
+# Tweet.destroy_all
 
 amazing_women.each do |woman|
   woman.gsub!(/ë/, 'e')

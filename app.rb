@@ -28,7 +28,7 @@ class GraceHopperTime < Sinatra::Base
     if woman.has_wiki_page
       @stat = WikiStats.new(woman.name).scrape_stats.strip.gsub("_", " ")
       @header = woman.name.upcase + " HAS A WIKIPEDIA PAGE"
-      @directive = "<a href='#{woman.wiki_page_link}' target='_blank'>WHY DON'T YOU MAKE IT BETTER?</a>"
+      @directive = "<a href='#{woman.wiki_page_link}' target='_blank'>CAN YOU HELP MAKE IT BETTER?</a>"
     else
       @header = woman.name.upcase + " DOES NOT HAVE A WIKIPEDIA PAGE"
       @directive = "<a href='#{woman.wiki_create_link}' target='_blank'>WHY DON'T YOU MAKE HER ONE?</a>"

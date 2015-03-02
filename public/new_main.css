@@ -1,18 +1,14 @@
 body {
 	font-size: 2em;
 }
-div {
-
-}
-
 
 #header {
-	margin: 0.5em 0 0 0;
+	margin: 0.35em 0 0.35em 0;
 	height: 1.5em;
 	padding: 0 0 0 0.22em;
 	font-size: 3em;
-	vertical-align: center;
 }
+
 #header a {
 	color: black;
 
@@ -29,9 +25,11 @@ div {
 	position: relative;
 	border-right: 0.2em solid;
 }
+
 #main {
 	padding: 0em 2em 2em 2em;
 }
+
 #content {
 	padding: 0 0 0 3em;
 }
@@ -46,6 +44,7 @@ div {
 	-moz-column-gap: 1em;
 	-webkit-column-gap: 1em;
 }
+
 .title {
 	font-size: 1.5em;
 }
@@ -53,7 +52,6 @@ div {
 #leftBar a, a {
 	color: #0E78FF;
 	font-weight: 900;
-
 }
 
 a:hover, a:visited {

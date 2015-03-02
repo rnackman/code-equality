@@ -12,17 +12,26 @@
       <div id="leftBar" class="col-md-2">
           <a href="/about">About</a><br>
           <a href="/index">Index</a><br>
-          <a href="http://anitaborg.org/">Anita Borg Institute</a><br>
           <a href="http://en.wikipedia.org">Wikipedia</a><br>
       </div>
       <div id="content" class="col-md-8">
         <div class="row">
-          <p id="index-title">All Programmers Currently Being Tracked:</p>
+          <p id="index-title">Individuals with Wikipedia Pages:</p>
           <div id="index">
-          <% @all.each do |programmer, i| %>
+          <% @all_with_page.each do |programmer| %>
             <a href="/<%=programmer.downcasename.gsub(" ", "_")%>"><%= "#{programmer.name}" %></a><br>  
           <% end %>
           </div>
+          <br>
+        </div>
+        <div class="row">
+          <p id="index-title">Individuals without Wikipedia Pages:</p>
+          <div id="index">
+          <% @all_no_page.each do |programmer| %>
+            <a href="/<%=programmer.downcasename.gsub(" ", "_")%>"><%= "#{programmer.name}" %></a><br>  
+          <% end %>
+          </div>
+          <br>
         </div>
       </div>
     </div>

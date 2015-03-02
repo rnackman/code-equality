@@ -14,10 +14,9 @@ class TweetGrabber
   end
 
   def populate(programmer)
-    @client.search(programmer, result_type: type = "mixed", lang: "en").take(10).each do |tweet|
-      unless self.all.include?(@client.oembed(tweet.id).html)
-        self.all << @client.oembed(tweet.id).html
-      end
+    @client.search(programmer, result_type: type = "mixed", lang: "en").take(5).each do |tweet|
+      html_tweet = @client.oembed(tweet.id).html
+        self.all << html_tweet unless self.all.include?(html_tweet)
     end
   end
 

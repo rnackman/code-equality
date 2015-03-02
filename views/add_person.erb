@@ -4,6 +4,7 @@
     <title>=CodeEquality=</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="new_main.css">
+    <script src="js/overscroll.js"></script>    
   </head>
 
   <body>
@@ -27,5 +28,13 @@
         </div>
       </div>
     </div>
+    <img class="easter-egg top" src="/img/upside-down.png">
+    <script>
+    var overscroll = new Overscroll();
+    window.onload = function() {
+        overscroll.bindElement(document.querySelector('.easter-egg.top'), 'top', 5);       
+    }
+ 
+    </script>    
   </body>
 </html>

@@ -59,3 +59,25 @@ a:hover, a:visited {
 	font-weight: 900;
 	color: #0E78FF;
 }
+.easter-egg {
+    /* Dimensions */
+    width: 241px;
+    height: 314px;
+
+    /* Fixed position */
+    position: fixed;
+    left: 50%;
+
+
+    /* Centered horizontally, and hidden above screen */
+    margin-left: -150px;
+}
+.top {
+    top: 0px;
+    margin-top: -314px;
+}
+
+.bottom {
+	bottom: 0;
+	margin-bottom: -314px;
+}

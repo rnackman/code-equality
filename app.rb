@@ -62,7 +62,13 @@ class GraceHopperTime < Sinatra::Base
       @directive = "<a href='#{woman.wiki_create_link}' target='_blank'>WHY DON'T YOU MAKE HER ONE?</a>"
       @tweet_embed = "Can you help build #{woman.name}'s Wikipedia page?"
     end
-    if woman.tweets.size == 0
+
+    @appropriate_tweets = woman.tweets.select do |t|
+      # binding.pry
+      t.html.downcase.include?(woman.downcasename)
+    end
+
+    if @appropriate_tweets.size == 0
       @twitter_intro = "Start the conversation on Twitter: "
     else
       @twitter_intro = "Here's what people have been saying about her on Twitter. Join the conversation: "

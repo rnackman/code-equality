@@ -1,8 +1,6 @@
 require './config/environment.rb'
 
 class GraceHopperTime < Sinatra::Base
-  
-
 
   get '/' do
     @woman = Individual.all.sample
@@ -11,7 +9,9 @@ class GraceHopperTime < Sinatra::Base
   end
 
   get '/index' do
-    @all = Individual.all
+    # @all = Individual.all
+    @all_with_page = Individual.all.select {|woman| woman.has_wiki_page}
+    @all_no_page = Individual.all.select {|woman| !woman.has_wiki_page}
     erb :index
   end
 

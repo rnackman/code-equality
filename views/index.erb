@@ -19,7 +19,7 @@
           <p id="index-title">Individuals without Wikipedia Pages:</p>
           <div id="index">
           <% @all_no_page.each do |programmer| %>
-            <a href="/<%=programmer.downcasename.gsub(" ", "_")%>"><%= "#{programmer.name}" %></a><br>  
+            <a href="/<%=programmer.downcase.gsub(" ", "_")%>"><%= "#{programmer}" %></a><br>  
           <% end %>
           </div>
           <br>
@@ -28,7 +28,7 @@
           <p id="index-title">Individuals with Wikipedia Pages:</p>
           <div id="index">
           <% @all_with_page.each do |programmer| %>
-            <a href="/<%=programmer.downcasename.gsub(" ", "_")%>"><%= "#{programmer.name}" %></a><br>  
+            <a href="/<%=programmer.downcase.gsub(" ", "_")%>"><%= "#{programmer}" %></a><br>  
           <% end %>
           </div>
           <br>

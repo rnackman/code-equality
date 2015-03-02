@@ -10,9 +10,13 @@ class GraceHopperTime < Sinatra::Base
 
   get '/index' do
     # @all = Individual.all
-    @all_with_page = Individual.all.select {|woman| woman.has_wiki_page}
-    @all_no_page = Individual.all.select {|woman| !woman.has_wiki_page}
+    @all_with_page = sort_names(Individual.all.select {|woman| woman.has_wiki_page})
+    @all_no_page = sort_names(Individual.all.select {|woman| !woman.has_wiki_page})
     erb :index
+  end
+
+  def sort_names(women)
+    women.collect {|woman| woman.name}.sort_by! {|name| name.split(' ').last}
   end
 
   get '/about' do

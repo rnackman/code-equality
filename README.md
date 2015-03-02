@@ -6,9 +6,4 @@ Database seeded using data from a public spreadsheet maintained by the Anita Bor
 
 Inspired by Art+Feminism (art.plusfeminism.org) and the CRA-W and Anita Borg Institute Wikipedia Project (http://www.cs.duke.edu/csed/wikipedia/index.html).
 
-Updates in progress:
-- Changes to CSS templates and other minor fixes.
-- Adding a feature to allow users to update the database if they create a new page for an individual.
-- Adding a feature to present a full index of the site and to allow searching by individual.
-
 Created by Alex Goldvarg (@agoldvarg), Andrew Miksch (@superandrew123) & Rachel Nackman (@rnackman) as a project for Flatiron School's web development immersive (Ruby 007). Thanks to Ian Miller for all your help!

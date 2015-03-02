@@ -23,7 +23,7 @@ body {
 #leftBar {
 	height: 60em;
 	position: relative;
-	border-right: 0.2em solid;
+
 }
 
 #main {
@@ -32,6 +32,7 @@ body {
 
 #content {
 	padding: 0 0 0 3em;
+	border-left: 0.2em solid;	
 }
 
 #index {

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>=CodeEquality=</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="new_main.css">
+
+  </head>
+
+  <body>
+  	<div id="main">
+      <div id="header"><a href="/">=CodeEquality=</a></div>
+      <div id="leftBar" class="col-md-2">
+          <a href="/about">About</a><br>
+          <a href="/index">Index</a><br>
+          <a href="http://en.wikipedia.org">Wikipedia</a><br>
+      </div>
+		  <div id="content" class="col-md-8">
+        <div class="row">
+  		    <p class="title"><%= @header %></p>
+          <p id="directive"><%= @directive %></p>
+          <p id="stat"><a href="http://stats.grok.se/en/latest90/<%= @woman.name.gsub(" ", "_") %>" target="_blank"><%= @stat %></a></p>
+          <p id="bio"><%= @woman.bio %></p>
+        <div id="row"><br></div>
+        <div id="twitter-material">
+          <div id="twitter-intro"><%= @twitter_intro %><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://localhost:9393/<%=@woman.name.gsub(" ", "_") %>" data-text="<%=@tweet_embed %> " data-hashtags="codeequality">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+              <% @appropriate_tweets.each do |tweet| %>
+                <%= tweet.html %>
+              <% end %>
+        </div>
+
+          <script>
+          window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+
+          return t;
+          }(document, "script", "twitter-wjs"));
+          </script>
+
+        </div>
+      </div>
+    </div>
+    <img class="easter-egg top" src="/img/upside-down.png">
+    <script>
+    var overscroll = new Overscroll();
+    window.onload = function() {
+        overscroll.bindElement(document.querySelector('.easter-egg.top'), 'top', 5);   
+    }
+ 
+    </script>
+  </body>
+</html>

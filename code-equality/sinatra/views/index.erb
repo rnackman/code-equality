@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>=CodeEquality=</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="new_main.css">
+    <script src="js/overscroll.js"></script>
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="header"><a href="/">=CodeEquality=</a></div>
+      <div id="leftBar" class="col-md-2">
+          <a href="/about">About</a><br>
+          <a href="/index">Index</a><br>
+          <a href="http://en.wikipedia.org">Wikipedia</a><br>
+      </div>
+      <div id="content" class="col-md-8">
+        <div class="row">
+          <p id="index-title">Individuals without Wikipedia Pages:</p>
+          <div id="index">
+          <% @all_no_page.each do |programmer| %>
+            <a href="/<%=programmer.downcase.gsub(" ", "_")%>"><%= "#{programmer}" %></a><br>  
+          <% end %>
+          </div>
+          <br>
+        </div>
+        <div class="row">
+          <p id="index-title">Individuals with Wikipedia Pages:</p>
+          <div id="index">
+          <% @all_with_page.each do |programmer| %>
+            <a href="/<%=programmer.downcase.gsub(" ", "_")%>"><%= "#{programmer}" %></a><br>  
+          <% end %>
+          </div>
+          <br>
+        </div> 
+      </div>
+    </div>
+    <img class="easter-egg top" src="/img/upside-down.png">
+    <script>
+    var overscroll = new Overscroll();
+    window.onload = function() {
+        overscroll.bindElement(document.querySelector('.easter-egg.top'), 'top', 5);      
+    }
+ 
+    </script>    
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>=CodeEquality=</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="new_main.css">
+    <script src="js/overscroll.js"></script>    
+  </head>
+
+  <body>
+    <div id="main">
+      <div id="header"><a href="/">=CodeEquality=</a></div>
+      <div id="leftBar" class="col-md-2">
+          <a href="/about">About</a><br>
+          <a href="/index">Index</a><br>
+          <a href="http://en.wikipedia.org">Wikipedia</a><br>
+      </div>
+      <div id="content" class="col-md-7">
+        <div class="row">
+          <p id="index-title">ABOUT THIS PROJECT</p>
+          <p>This project is was created by Rachel Nackman, Alex Goldvarg and Andrew Miksch as apart of our education at the Flatiron School in New York City.</p><p> As we've been learning we've noticed an imbalance in representation of women in technology on Wikipedia. A number of organizations are working to address this problem including the Anita Borg Institute, which has maintains a public spreadsheet of over 300 women whose Wikipedia pages need updating or creation. We used their information to seed our database.With this project we hope to create a hub to spread the word about this important work.</p><p>Creating a new Wikipedia page can be difficult. We have not provided training resources to learn what is necessary to properly update and create content on Wikipedia, but these sites do:<br>
+          <a href="https://www.cs.duke.edu/csed/wikipedia/index.html">CRA-W and Anita Borg Institute Wikipedia Project</a><br>
+          <a href="http://art.plusfeminism.org/">Art+Feminism</a><br>
+          <a href="https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Women%27s_History/Taskforces/Women_in_technology">WikiProject Women's History</a><br>
+          <a href="http://en.wikipedia.org/wiki/Wikipedia:Your_first_article">Wikipedia:Your first article</a><br></p>
+
+          <p>We'd love to hear ideas on how to improve this project. Reach out to us on github.
+          </p><p>Thanks,<br>
+          <a href="https://github.com/rnackman">Rachel</a>, <a href="https://github.com/superandrew123">Andrew</a>, <a href="https://github.com/agoldvarg">Alex</a>
+          </p>
+
+
+
+        </div>
+      </div>
+    </div>
+    <img class="easter-egg top" src="/img/upside-down.png">
+    <script>
+    var overscroll = new Overscroll();
+    window.onload = function() {
+        overscroll.bindElement(document.querySelector('.easter-egg.top'), 'top', 5);        
+    }
+    </script>    
+  </body>
+</html>
